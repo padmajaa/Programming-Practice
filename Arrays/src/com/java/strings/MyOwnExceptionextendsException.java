@@ -1,0 +1,31 @@
+package com.java.strings;
+
+
+
+class MyOwnException extends Exception {
+	   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public MyOwnException(String msg){
+	      super(msg);
+	   }
+	}
+
+	class EmployeeTest {
+	   static void  employeeAge(int age) throws MyOwnException{
+	      if(age < 0)
+	         throw new MyOwnException("Age can't be less than zero");
+	      else
+	         System.out.println("Input is valid!!");
+	   }
+	   public static void main(String[] args) {
+	       try {
+	            employeeAge(-2);
+	       }
+	       catch (MyOwnException e) {
+	            e.printStackTrace();
+	       }
+	   }
+	}
